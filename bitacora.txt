@@ -1,0 +1,2 @@
+Instalar PYthon3 en AWS Linux 2023
+https://tecadmin.net/how-to-install-python-3-11-on-amazon-linux-2/
