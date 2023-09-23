@@ -72,7 +72,7 @@ def train_model(model, criterio, optimizer, scheduler, num_epochs = 25):
 #----------------------------
 print("INICIANDO FITOFTORA") 
 
-train_dataset = torchvision.datasets.ImageFolder('phytopthora_data/train',
+train_dataset = torchvision.datasets.ImageFolder('/opt/data/train',
                                                 transform=transforms.Compose([
                                                     transforms.RandomResizedCrop(224),
                                                     transforms. ToTensor(),
@@ -81,7 +81,7 @@ train_dataset = torchvision.datasets.ImageFolder('phytopthora_data/train',
                                                     
                                                 ]))
 #recibir 1 imagen y guardarlo en la carpeta phytopthora_data/val
-test_dataset = torchvision.datasets.ImageFolder('phytopthora_data/val',
+test_dataset = torchvision.datasets.ImageFolder('/opt/data/val',
                                               transform=transforms.Compose([
                                                     transforms.Resize(256),
                                                     transforms.CenterCrop(224),
@@ -105,7 +105,7 @@ device =('cpu')
 model_ft = models.resnet18(weights='ResNet18_Weights.DEFAULT')
 num_ft = model_ft.fc.in_features
 
-model_ft.fc = nn.Linear(num_ft, 2)
+model_ft.fc = nn.Linear(num_ft, 4)
 
 model_ft = model_ft.to(device)
 criterion = nn.CrossEntropyLoss()
@@ -114,7 +114,5 @@ scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.1)
 print("training...")
 model_ft = train_model(model_ft, criterion, optimizer, scheduler, num_epochs=25)
 print("trained")
-
-torch.save(model_ft.state_dict(),"trained_resenet18.pth")
-
-#python main_resnet18.py
+torch.save(model_ft.state_dict(),"trained_model_ft.pth")
+print("trained save to file")
