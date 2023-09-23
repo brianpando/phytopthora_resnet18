@@ -47,3 +47,19 @@ image = transform(image).unsqueeze(0)
 prediction=predict(model_ft, image)
 print("result")
 print(prediction)
+
+def consume_model(img):
+
+  device =('cpu')
+  model_ft = models.resnet18(weights='ResNet18_Weights.DEFAULT')
+  num_ft = model_ft.fc.in_features
+  model_ft.fc = nn.Linear(num_ft, 4)
+  model_ft = model_ft.to(device)
+
+  model_ft.load_state_dict(torch.load("trained_model_ft.pth"))
+  model_ft.eval()
+  
+  image = transform(img).unsqueeze(0)
+  prediction = predict(model_ft, image)
+
+  return prediction
