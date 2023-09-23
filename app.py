@@ -42,7 +42,7 @@ def to_diagnose():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             #return redirect(url_for('download_file', name=filename))
 
-            prediction = consume_resnet18(file)
+            prediction = 0
 
             if prediction == 0:
                 diagnostic = {
