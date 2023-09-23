@@ -3,7 +3,7 @@ from flask import Flask, session, flash, request, redirect, url_for, jsonify
 
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = '/phytopthora/opt/img_uploads'
+UPLOAD_FOLDER = '/opt/img_uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask(__name__)
