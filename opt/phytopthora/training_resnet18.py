@@ -72,7 +72,7 @@ def train_model(model, criterio, optimizer, scheduler, num_epochs = 25):
 #----------------------------
 print("INICIANDO FITOFTORA") 
 
-train_dataset = torchvision.datasets.ImageFolder('phytopthora/opt/data/train',
+train_dataset = torchvision.datasets.ImageFolder('/opt/data/train',
                                                 transform=transforms.Compose([
                                                     transforms.RandomResizedCrop(224),
                                                     transforms. ToTensor(),
@@ -81,7 +81,7 @@ train_dataset = torchvision.datasets.ImageFolder('phytopthora/opt/data/train',
                                                     
                                                 ]))
 #recibir 1 imagen y guardarlo en la carpeta phytopthora_data/val
-test_dataset = torchvision.datasets.ImageFolder('phytopthora/opt/data/val',
+test_dataset = torchvision.datasets.ImageFolder('/opt/data/val',
                                               transform=transforms.Compose([
                                                     transforms.Resize(256),
                                                     transforms.CenterCrop(224),
