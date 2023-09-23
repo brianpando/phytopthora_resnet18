@@ -53,7 +53,7 @@ def to_diagnose():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             #return redirect(url_for('download_file', name=filename))
 
-            image = Image.open(r"/opt/img_uploads/image4.jpg")
+            image = Image.open(r"/opt/img_uploads/"+filename)
             prediction = consume_model(image)
 
             if prediction == 0:
