@@ -81,7 +81,7 @@ train_dataset = torchvision.datasets.ImageFolder('/opt/data/train',
                                                     
                                                 ]))
 #recibir 1 imagen y guardarlo en la carpeta phytopthora_data/val
-test_dataset = torchvision.datasets.ImageFolder('/opt/data/val',
+test_dataset = torchvision.datasets.ImageFolder('/opt/data/test',
                                               transform=transforms.Compose([
                                                     transforms.Resize(256),
                                                     transforms.CenterCrop(224),
