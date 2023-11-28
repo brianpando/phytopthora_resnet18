@@ -13,7 +13,7 @@ from flask import Flask, session, flash, request, redirect, url_for, jsonify
 
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = 'C:/Users/leti_/Documents/test_ai_example/img_uploads'
+UPLOAD_FOLDER = '/opt/data/img_uploads/'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask(__name__)
