@@ -1,2 +1,6 @@
 Instalar PYthon3 en AWS Linux 2023
 https://tecadmin.net/how-to-install-python-3-11-on-amazon-linux-2/
+
+
+Para instalar gunicorn y ngnix para produccion
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-22-04
