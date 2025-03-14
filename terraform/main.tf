@@ -8,7 +8,7 @@ resource "digitalocean_droplet" "flask_server" {
   size   = "s-1vcpu-1gb"  # 1GB RAM, 1 vCPU
   image  = "ubuntu-22-04-x64"
 
-  ssh_keys = var.ssh_key_fingerprints
+  ssh_keys = var.ssh_keys
 
   user_data = file("${path.module}/install.sh")
 
