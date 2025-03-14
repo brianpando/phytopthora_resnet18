@@ -5,5 +5,5 @@ variable "do_token" {
 
 variable "ssh_key_fingerprint" {
   description = "Fingerprint de la clave SSH pública en DigitalOcean"
-  type        = string
+  type        = list(string)
 }
