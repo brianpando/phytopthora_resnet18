@@ -3,7 +3,7 @@ variable "do_token" {
   type        = string
 }
 
-variable "ssh_key_fingerprints" {
+variable "ssh_keys" {
   description = "Fingerprint de la clave SSH pública en DigitalOcean"
   type        = list(string)
 }

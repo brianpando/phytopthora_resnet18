@@ -1,2 +1,0 @@
-do_token = "TOKEN_DIGITAL_OCEAN_API"
-ssh_keys = ["sshkey1", "sshkey2"]
