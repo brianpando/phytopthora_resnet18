@@ -22,6 +22,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 from diagnostic import diagnostic
 
+@app.route('/', methods=['GET'])
+def index():
+    return jsonify({'message': 'hola 2'})
 
 @app.route('/verificacion', methods=['GET'])
 def verify():
@@ -120,7 +123,7 @@ def consume_model(img):
   model_ft.fc = nn.Linear(num_ft, 4)
   model_ft = model_ft.to(device)
 
-  model_ft.load_state_dict(torch.load("trained_model_ft.pth"))
+  model_ft.load_state_dict(torch.load("ia_models/trained_model_ft.pth"))
   model_ft.eval()
   
   image = transform(img).unsqueeze(0)

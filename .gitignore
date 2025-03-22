@@ -1,1 +1,3 @@
 pythopthora_data/
+.terraform
+terraform/terraform.tfvars
